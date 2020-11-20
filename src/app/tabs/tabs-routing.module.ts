@@ -28,8 +28,12 @@ const routes: Routes = [
         loadChildren: () => import('../messagerie/messagerie.module').then(m => m.MessageriePageModule)
       },
       {
+        path: 'accueil',
+        loadChildren: () => import('../accueil/accueil.module').then(m => m.AccueilPageModule)
+      },
+      {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/accueil',
         pathMatch: 'full'
       }
     ]
