@@ -30,17 +30,12 @@ const routes: Routes = [
       {
         path: 'accueil',
         loadChildren: () => import('../accueil/accueil.module').then(m => m.AccueilPageModule)
-      },
-      {
-        path: '',
-        redirectTo: '/tabs/accueil',
-        pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/accueil',  //Permet de changer la page visible au lancement de l'appli
     pathMatch: 'full'
   }
 ];

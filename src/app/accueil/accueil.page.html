@@ -10,15 +10,22 @@
         <span class="insert-photo">
           <a href="#">Photo</a>
         </span>
-        <p style="color:#ffffff">Bonjour *Prénom* !</p>
+        <p style="color:#ffffff" *ngFor='let user of users | async'>Bonjour {{user.prenom}} !</p>
       </h1>
     </div>
 
     <!-- Proposer un trajet ? -->
-    <div class="accueil_trajet">
+    <!-- <div class="accueil_trajet">
       <h3 class="titre1">Vous n'avez aucun trajet de prévu ...</h3>
-      <p>Voulez-vous en proposer un ? Cliquez <a href="../tabs/tab3">ici</a> !</p> 
+      <p>Voulez-vous en proposer un ? Cliquez <a href="../tabs/tab3">ici</a> !</p>  
+    </div>-->
 
+    <!-- Trajets disponibles -->
+    <div class="accueil_trajet">
+      <h3 class="titre1">Liste des trajets prévus</h3>
+      <ion-item *ngFor='let trajet of trajets | async'>
+        <ion-label>Départ : {{trajet.VilleDepart}} {{trajet.HeureDepart}} | Arrivée : {{trajet.VilleArrivee}} {{trajet.HeureArrivee}}</ion-label>
+      </ion-item>
     </div>
   </section>
 </ion-content>
